@@ -40,5 +40,3 @@ jobs:
     
     - name: Publish to npm
       run: npm publish --userconfig=./.npmrc-public --@atlassian/connect-to-forge:registry="https://packages.atlassian.com/api/npm/npm-public/"
-      env:
-        NODE_AUTH_TOKEN: ${{ steps.publish-token.outputs.npm-auth-token }} 
