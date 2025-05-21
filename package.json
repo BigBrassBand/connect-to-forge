@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/robertmassaioli/connect-to-forge.git"
   },
+  "publishConfig": {
+    "registry": "https://packages.atlassian.com/api/npm/npm-public/"
+  },
   "files": [
     "dist/**/*",
     "README.md"
