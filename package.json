@@ -8,7 +8,10 @@
   },
   "author": "Robert Massaioli <connect-on-forge@rmdir.app>",
   "license": "MIT",
-  "repository": "git://github.com/BigBrassBand/connect-to-forge",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BigBrassBand/connect-to-forge.git"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
