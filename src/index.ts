@@ -60,18 +60,18 @@ interface ForgeManifest {
 
 // Commander setup
 program
-  .requiredOption('-u, --url <url>', 'Atlassian Connect descriptor URL')
-  .option("-ni, --non-interactive", "Disable inquirer")
-  .option("--inScopeEUD", "Disable inquirer", false)
-  .option("--purpose-storage", "Disable inquirer", false)
-  .option("--purpose-compute", "Disable inquirer", false)
-  .option("--purpose-fetch", "Disable inquirer", false)
-  .option("--purpose-other", "Disable inquirer", false)
-  .option('-t, --type <type>', 'App type (jira or confluence)')
-  .option('--migration-path <migrationPath>')
-  .option('-o, --output <path>', 'Output file path', 'manifest.yml')
-  .name('connect-to-forge')
-  .usage('--type <jira|confluence> --url https://website.com/path/to/descriptor.json')
+  .requiredOption("-u, --url <url>", "Atlassian Connect descriptor URL")
+  .option("-ni, --non-interactive", "Disable interactive prompts and run in non-interactive mode")
+  .option("--inScopeEUD", "Does your app egress end-user data to store it on a remote location?", false)
+  .option("--purpose-storage", "Purpose: Store data on a remote service (e.g., cloud database, file storage)", false)
+  .option("--purpose-compute", "Purpose: Send data to a remote service for processing or computation", false)
+  .option("--purpose-fetch", "Purpose: Fetch or retrieve data from a remote service", false)
+  .option("--purpose-other", "Purpose: Data egress for other reasons not covered by storage, compute, or fetch", false)
+  .option("-t, --type <type>", "App type (jira or confluence)")
+  .option("--migration-path <migrationPath>", "JWT auth is not supported on migration endpoints. Enter the new migrations path (leave empty to use the default path same as Connect and update it later)")
+  .option("-o, --output <path>", "Output file path", "manifest.yml")
+  .name("connect-to-forge")
+  .usage("--type <jira|confluence> --url https://website.com/path/to/descriptor.json")
   .parse(process.argv);
 
 const { 
