@@ -1,3 +1,7 @@
+## the why
+
+Our team needs to have ability to run this script in non-interactive mode on non-tty systems (such as github actions, docker, etc.)
+
 ## connect-to-forge
 
 This tool is designed to let Connect developers quickly migrate their apps to Forge, starting with the Descriptor to Manifest conversion. To use this tool, simply:
