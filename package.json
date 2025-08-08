@@ -1,6 +1,6 @@
 {
-  "name": "@atlassian/connect-to-forge",
-  "version": "1.1.0",
+  "name": "@bigbrassband/connect-to-forge",
+  "version": "0.0.1-pre",
   "description": "Converts an Atlassian Connect Descritor to a connect-on-forge manifest.",
   "main": "dist/index",
   "bin": {
@@ -8,12 +8,9 @@
   },
   "author": "Robert Massaioli <connect-on-forge@rmdir.app>",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/robertmassaioli/connect-to-forge.git"
-  },
+  "repository": "git://github.com/BigBrassBand/connect-to-forge",
   "publishConfig": {
-    "registry": "https://packages.atlassian.com/api/npm/npm-public/"
+    "registry": "https://npm.pkg.github.com/"
   },
   "files": [
     "dist/**/*",
@@ -39,9 +36,9 @@
     "ts-is-present": "^1.2.2"
   },
   "scripts": {
-    "start": "ts-node --esm src/index.ts",
-    "start-jira": "ts-node --esm src/index.ts --type jira --url",
-    "start-conf": "ts-node --esm src/index.ts --type confluence --url",
+    "start": "ts-node src/index.ts",
+    "start-jira": "ts-node src/index.ts --type jira --url",
+    "start-conf": "ts-node src/index.ts --type confluence --url",
     "build": "tsc -p ./tsconfig.json",
     "prepack": "webpack --mode production --config webpack.config.js"
   }
