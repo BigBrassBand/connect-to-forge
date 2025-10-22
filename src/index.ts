@@ -1,5 +1,4 @@
 import fs from 'fs';
-import axios from 'axios';
 import yaml from 'js-yaml';
 import { program } from 'commander';
 import inquirer from 'inquirer';
@@ -92,8 +91,8 @@ const UNSUPPORTED_MODULES = new Set<string>([]);
 // Helper function to download Atlassian Connect descriptor
 async function downloadConnectDescriptor(url: string): Promise<ConnectDescriptor> {
   try {
-    const response = await axios.get(url);
-    return response.data;
+    const response = await fetch(url).then(x => x.json());
+    return response;
   } catch (error) {
     console.error(`Error downloading Atlassian Connect descriptor at ${url}: ${error}`);
     process.exit(1);
